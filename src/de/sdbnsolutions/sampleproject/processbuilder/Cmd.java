@@ -36,13 +36,7 @@ public abstract class Cmd {
 		return process.waitFor();
 	}
 
-	private void setParameters(List<String> parameters) {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void setParameters(List<String> parameters);
 
-	private String getCmdFile() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract String getCmdFile();
 }
