@@ -17,11 +17,11 @@ public abstract class Cmd {
 		List<String> parameters = new ArrayList<String>();
 		setParameters(parameters);
 		
-		for (String parameter : parameters) {
-			command.add(parameter);
-		}
-		
 		ProcessBuilder processBuilder = new ProcessBuilder(command);
+		
+		for (String parameter : parameters) {
+			processBuilder.environment().put(parameter.getName(), parameter.getValue());
+		}
 		
 		Process process = processBuilder.start();
 		
